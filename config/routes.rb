@@ -12,4 +12,3 @@ get "show" => "user#show"
   # Defines the root path route ("/")
   # root "posts#index"
 end
-git init
