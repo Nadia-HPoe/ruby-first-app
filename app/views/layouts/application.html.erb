@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8"/>
     <title><%= content_for(:title) || "First App" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -23,6 +24,14 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header">
+      <div class="logo">
+        <img src="logo.png" alt="logo" class="logo_img">
+        <h3 class="logo_text"><%= link_to "Quidy", root_path %></h3>
+      </div>
+      </header>
+
+    <main class="content"><%= yield %></main>
+    
   </body>
 </html>
