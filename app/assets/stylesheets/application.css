@@ -10,7 +10,7 @@
  */
 @font-face {
   font-family: "Nunito";
-  src: url("../fonts/Nunito-VariableFont_wght.ttf") format("ttf");
-  font-weight: normal;
+  src: url("/Nunito-VariableFont_wght.ttf") format("truetype");
   font-style: normal;
+  font-display: swap;
 }

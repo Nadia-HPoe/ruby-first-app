@@ -13,6 +13,13 @@ class UsersController < ApplicationController
       username: 'lilflower',
       avatar_url: 'https://img.freepik.com/free-vector/hand-drawn-anime-kawaii-illustration_52683-123747.jpg?semt=ais_hybrid&w=740&q=80'
 
+    ),
+    User.new(
+      id: 3,
+      name: 'Nate',
+      username: 'catsnake',
+      avatar_url: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRZ7TBSGntVkvJHcJTnWIgtrk3Zs0nvWvXvmQ&s'
+
     )]
 
   end

@@ -24,19 +24,19 @@
   </head>
 
   <body>
-    <header class="header">
+    <aside class="header">
       <div class="logo">
         <%= image_tag "logo.png"%>
-        <h3 class="logo_text"><%= link_to "Quidy", root_path %></h3>
+        <%= link_to "", root_path %>
       </div>
       <nav class="header-nav">
         <ul class="nav-list">
-          <li class="nav-item">MainPage</li>
+          <li class="nav-item">Main Page</li>
           <li class="nav-item">My Questions</li>
           <li class="nav-item">Settings</li>
         </ul>
       </nav>
-    </header>
+    </aside>
 
     <main class="content"><%= yield %></main>
     
