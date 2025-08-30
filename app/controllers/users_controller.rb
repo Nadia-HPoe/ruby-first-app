@@ -37,7 +37,8 @@ class UsersController < ApplicationController
       id: 1,
       name: 'John',
       username: 'JohnXXX',
-      avatar_url: 'https://masterpiecer-images.s3.yandex.net/d960d0ee6f5811ee886e3a7ca4cc1bdc:upscaled'
+      avatar_url: 'https://masterpiecer-images.s3.yandex.net/d960d0ee6f5811ee886e3a7ca4cc1bdc:upscaled',
+
 
     )
 
