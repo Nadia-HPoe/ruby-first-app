@@ -31,8 +31,8 @@
         <div class="question-block">
             <h2 class="title">Questions</h2>
             <div class="question-wrapper">
-                <% @questions.each do |question|%>
-                    <%= render partial: "questions/question", object: question %>
+                <% @questions.each do |question| %>
+                    <%= render question %>
                 <% end %>
             </div>
         </div>

@@ -1,10 +1,10 @@
 <% question ||= nil %>
-<% action_icon = question.answer_blank? ? "reply" : "pencil" %>
+<% action_icon = question.answer.blank? ? "reply" : "pencil" %>
 
 <div class="question">
     <div class="question-content">
         <div class="question-text">
-            <%= question.text%>
+            <%= question.text %>
         </div>
     <% if question.answer.present? %>
         <div class="question-answer">
@@ -19,8 +19,8 @@
 
     <% if question.user == current_user%>
         <div class="question-actions">
-            <% link_to fa_icon(action_icon), edit_question_path(question) %>
-            <% link_to fa_icon("trash-o"), question_path(question, method: :delete, data: {confirm: "Are you sure you want to delete this question?"}) %>
+            <%= link_to fa_icon(action_icon), edit_question_path(question) %>
+            <%= link_to fa_icon("trash-o"), question_path(question, method: :delete, data: {confirm: "Are you sure you want to delete this question?"}) %>
         </div>
     <% end %>
 </div>

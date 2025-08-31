@@ -10,7 +10,7 @@ class QuestionsController < ApplicationController
       if @question.save
         redirect_to user_path(@question.user), notice: "Question was successfully created." 
       else
-        render :new
+        render :new, status: :unprocessable_entity
       end
   end
 
@@ -18,7 +18,7 @@ class QuestionsController < ApplicationController
       if @question.update(question_params)
         redirect_to user_path(@question.user), notice: "Question was successfully updated."
       else
-        render :edit
+        render :edit, status: :unprocessable_entity
       end
   end
 
