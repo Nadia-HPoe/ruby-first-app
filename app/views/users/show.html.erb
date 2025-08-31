@@ -3,12 +3,12 @@
     <h2 class="title">@<%= @user.username %></h2>
     <div class="user-card_bio">
         <div class="user-img-container">
-            <%= image_tag user_avatar(@user), alt: 'profile pic', class: 'image'%>
+            <%= image_tag user_avatar(@user), alt: 'profile pic', class: "image" %>
         </div>
         <h3 class="user-subtitle">Name: <%= @user.name %></h3>
         <h3 class="user-subtitle">Bio: <%= user_bio(@user)%></h3>
         <div class="user-edit">
-            <%= link_to 'Edit profile', edit_user_path(@user), class: 'user-edit-link' if current_user == @user %>
+            <%= link_to "Edit profile", edit_user_path(@user), class: "user-edit-link" if current_user == @user %>
         </div>
         <a href="#" class="button button-mobile" id="ask-button">Ask question</a>
     </div>
@@ -19,20 +19,20 @@
         <%= form_for @new_question do |f| %>
             <%= f.hidden_field :user_id %>
             <div class="form-field">
-                <%= f.label "Ask @#{@user.username} about anything!", class: 'form-label'%>
-                <%= f.text_area :text, class: 'form-textarea' %>
+                <%= f.label "Ask @#{@user.username} about anything!", class: "form-label"%>
+                <%= f.text_area :text, class: "form-textarea" %>
             </div>
 
             <div class="form-action"> 
-                <%= submit_tag "Ask question", class: 'button'%>
+                <%= submit_tag "Ask question", class: "button"%>
             </div>
         <% end %>
         </div>
         <div class="question-block">
             <h2 class="title">Questions</h2>
             <div class="question-wrapper">
-                <% @questions.each do |question|%>
-                    <%= render partial: 'questions/question', object: question %>
+                <% @questions.each do |question| %>
+                    <%= render question %>
                 <% end %>
             </div>
         </div>

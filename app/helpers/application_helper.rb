@@ -3,7 +3,7 @@ module ApplicationHelper
       if user.avatar_url.present?
         user.avatar_url
       else
-          asset_path 'avatar.png'
+          asset_path "avatar.png"
       end
     end
     def user_bio(user)
@@ -12,5 +12,10 @@ module ApplicationHelper
       else
       "#{user.name} hasn't written anything yet"
       end
+    end
+
+    def fa_icon(icon_class)
+      content_tag "span", "", class: "fa fa-#{icon_class}" 
+
     end
 end
