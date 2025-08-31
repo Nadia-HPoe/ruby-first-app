@@ -1,5 +1,6 @@
+/* main screen */
 .content-wrapper {
-  padding-top: 180px;
+  padding-top: 30px;
 }
 .title {
   font-style: normal;
@@ -13,6 +14,7 @@
 .user-wrapper {
   display: flex;
   justify-content: start;
+  flex-wrap: wrap;
   gap: 20px;
 }
 .user-image-s {
@@ -34,14 +36,15 @@
   padding: 30px;
   border-radius: 20px;
 }
+/* user page */
 .user-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: start;
+  gap: 100px;
 }
 .user-card,
 .user-question-form {
-  margin-top: 160px;
   padding: 20px;
 }
 .user-card_bio {
@@ -49,12 +52,20 @@
   padding: 15px 15px 25px;
   border-radius: 20px;
 }
-
 .user-subtitle {
   font-weight: 600;
   font-size: 20x;
   line-height: 120%;
   color: #4e3f6f;
+}
+.user-edit-link {
+  font-size: 14px;
+  color: rgba(190, 190, 192, 0.808);
+  text-decoration: none;
+  transition: all 0.6s ease;
+}
+.user-edit-link:hover {
+  color: #8c8cb6;
 }
 .button {
   width: 186px;
@@ -63,7 +74,6 @@
   border-radius: 20px;
   border: none;
   color: white;
-  padding: 18px 33px;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.6s ease;
@@ -117,4 +127,53 @@
 }
 .form-action {
   padding-top: 30px;
+}
+
+/* create new user */
+.new-form {
+  max-width: 600px;
+  padding: 50px 65px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
+.new-title {
+  color: #6c53e7;
+}
+.new-form-field {
+  margin-bottom: 20px;
+}
+
+.new-form-label {
+  display: block;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 120%;
+  color: #4e3f6f;
+}
+
+.form-input {
+  width: 100%;
+  height: 68px;
+  padding: 8px 12px;
+  background-color: #f2f2fe;
+  border: 1px solid #f2f2fe;
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #6c53e7;
+  box-shadow: 0 0 8px rgba(108, 83, 231, 0.6);
+}
+
+.new-form-action {
+  text-align: center;
+  margin-top: 20px;
+}
+.form-errors-message {
+  color: #ffa012;
+  list-style-type: circle;
 }

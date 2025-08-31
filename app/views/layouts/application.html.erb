@@ -24,6 +24,7 @@
   </head>
 
   <body>
+
     <aside class="header">
       <div class="logo">
         <%= image_tag "logo.png"%>
@@ -38,7 +39,25 @@
       </nav>
     </aside>
 
-    <main class="content"><%= yield %></main>
+    <div class="content">
+      <header>
+        <input type="search" placeholder="Search..." class="search-input" />
+        <div class="button-group">
+          <%= link_to "Register", sign_up_path, class: "btn register-btn" %>
+          <%= link_to "Login", log_in_path, class: "btn login-btn" %>
+        </div>
+      </header>
+      <main>
+        <% if flash.any?%>
+          <div class="flash-wrapper">
+            <% flash.each do |name, message|%>
+              <%= content_tag :div, message, class: "flash-#{name}"%>
+            <%end%>  
+          </div>
+        <%end%>  
+        <%= yield %>
+      </main>
+    </div>
     
   </body>
 </html>

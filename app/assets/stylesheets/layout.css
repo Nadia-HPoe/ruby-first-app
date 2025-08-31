@@ -4,7 +4,7 @@ body {
   display: flex;
 }
 .content {
-  flex: 5;
+  flex: 10;
 }
 aside {
   display: flex;
@@ -36,4 +36,57 @@ aside {
   letter-spacing: -0.41px;
   text-decoration: none;
   color: #4e3f6f;
+}
+
+header {
+  padding: 40px 40px 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.search-input {
+  flex: 1;
+  max-width: 750px;
+  height: 68px;
+  padding: 10px 30px;
+  border: 1px solid white;
+  border-radius: 20px;
+  transition: border-color 0.3s ease;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 60px;
+  color: #4e3f6f;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #6c53e7;
+  box-shadow: 0 0 5px rgb(108, 83, 231, 0.5);
+}
+
+.button-group {
+  display: flex;
+  gap: 10px;
+  margin-left: 20px;
+}
+
+.btn {
+  padding: 20px 40px;
+  font-size: 1rem;
+  border: 1px solid #6c53e7;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: white;
+  color: #6c53e7;
+  text-decoration: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #6c53e7;
+  color: white;
+}
+
+.flash-wrapper {
+  color: #ffa012;
 }

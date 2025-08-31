@@ -7,9 +7,11 @@
         </div>
         <h3 class="user-subtitle">Name: <%= @user.name %></h3>
         <h3 class="user-subtitle">Bio: <%= user_bio(@user)%></h3>
+        <div class="user-edit">
+            <%= link_to 'Edit profile', edit_user_path(@user), class: 'user-edit-link' %>
+        </div>
         <a href="#" class="button button-mobile" id="ask-button">Ask question</a>
     </div>
-    
     </div>
     <div class="user-question-form">
     
