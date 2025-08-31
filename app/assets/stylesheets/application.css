@@ -8,3 +8,9 @@
  *
  * Consider organizing styles into separate files for maintainability.
  */
+@font-face {
+  font-family: "Nunito";
+  src: url("/Nunito-VariableFont_wght.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}

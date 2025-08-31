@@ -24,14 +24,51 @@
   </head>
 
   <body>
-    <header class="header">
-      <div class="logo">
-        <img src="logo.png" alt="logo" class="logo_img">
-        <h3 class="logo_text"><%= link_to "Quidy", root_path %></h3>
-      </div>
-      </header>
 
-    <main class="content"><%= yield %></main>
+    <aside class="header">
+      <div class="logo">
+        <%= image_tag "logo.png"%>
+        <%= link_to "", root_path %>
+      </div>
+      <nav class="header-nav">
+        
+          <div class="nav-item"><%= image_tag "header-home.svg"%><%= link_to "Main Page", root_path, class: "nav-link"%></div>
+          <div class="nav-item"><%= image_tag "header-message.svg"%><%= link_to "My Questions", root_path, class: "nav-link" %></div>
+          <div class="nav-item"><%= image_tag "header-settings.svg"%><%= link_to "Settings", root_path, class: "nav-link" %></div>
+        </ul>
+      </nav>
+    </aside>
+
+    <div class="content">
+      <header>
+        <input type="search" placeholder="Search..." class="search-input" />
+        <div class="button-group">
+          <%if current_user%>
+            <%= link_to user_path(current_user), class: "profile-link" do %>
+            <div class="profile-wrapper">
+              <%= image_tag current_user.avatar_url, alt: "#{current_user.username}'s avatar", class: "user-image-t" if current_user.avatar_url.present? %>
+              <span class="green-dot"></span>
+              </div>
+              @<%= current_user.username %>
+            <% end %>
+            <%= link_to "Logout", log_out_path, class: "link" %>
+          <%else%>
+            <%= link_to "Register", sign_up_path, class: "btn register-btn" %>
+            <%= link_to "Login", log_in_path, class: "btn login-btn" %>
+          <%end%>  
+        </div>
+      </header>
+      <main>
+        <% if flash.any?%>
+          <div class="flash-wrapper">
+            <% flash.each do |name, message|%>
+              <%= content_tag :div, message, class: "flash-#{name}"%>
+            <%end%>  
+          </div>
+        <%end%>  
+        <%= yield %>
+      </main>
+    </div>
     
   </body>
 </html>

@@ -1,0 +1,42 @@
+<div class="new-form">
+    <h1 class="new-title">Join us!</h1>
+  <%= form_for @user do |f| %>
+      <% if @user.errors.any? %>
+        <div class="form-errors">
+          <ul>
+            <% for message in @user.errors.full_messages %>
+              <li class="form-errors-message"><%= message %></li>
+            <% end %> 
+          </ul>
+        </div>
+      <% end %>  
+    <div class="new-form-field">
+      <%= f.label :email, "Email", class: "new-form-label" %>
+      <%= f.email_field :email, required: true, class: "form-input" %>
+    </div>
+
+    <div class="new-form-field">
+      <%= f.label :username, "Username", class: "new-form-label" %>
+      <%= f.text_field :username, required: true, class: "form-input" %>
+    </div>
+
+    <div class="new-form-field">
+      <%= f.label :name, "Name", class: "new-form-label" %>
+      <%= f.text_field :name, required: true, class: "form-input" %>
+    </div>
+
+    <div class="new-form-field">
+      <%= f.label :password, "Password", class: "new-form-label" %>
+      <%= f.password_field :password, required: true, class: "form-input" %>
+    </div>
+
+    <div class="new-form-field">
+      <%= f.label :password_confirmation, "Password Confirmation", class: "new-form-label" %>
+      <%= f.password_field :password_confirmation, required: true, class: "form-input" %>
+    </div>
+
+    <div class="new-form-action">
+      <%= f.submit "Create an account", class: "button" %>
+    </div>
+  <% end %>
+</div>
