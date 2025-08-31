@@ -6,15 +6,15 @@ class SessionsController < ApplicationController
     @user = User.authenticate(params[:email], params[:password])
     if @user.present?
       session[:user_id] = @user.id
-      redirect_to root_url, notice: 'You have successfully logged in!'
+      redirect_to root_url, notice: "You have successfully logged in!"
     else
-      flash.now.alert = 'Incorrect email or password!'  
+      flash.now.alert = "Incorrect email or password!" 
       render :new
     end
   end
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_url, notice: 'You have been logged out of your account.'
+    redirect_to root_url, notice: "You have been logged out of your account."
   end
 end

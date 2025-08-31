@@ -1,22 +1,22 @@
 class UsersController < ApplicationController
 
-  before_action :load_user, except: [:index, :new, :create]
-  before_action :authorize_user, except: [:index, :new, :create, :show]
+  before_action :load_user, except: [ :index, :new, :create ]
+  before_action :authorize_user, except: [ :index, :new, :create, :show ] 
 
   def index
     @users = User.all
   end
 
   def new
-    redirect_to root_url, alert: 'You are already logged in' if current_user.present?
+    redirect_to root_url, alert: "You are already logged in" if current_user.present?
     @user = User.new
   end
 
   def create
-    redirect_to root_url, alert: 'You are already logged in' if current_user.present?
+    redirect_to root_url, alert: "You are already logged in" if current_user.present?
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_url, notice: 'User successfully created!'
+      redirect_to root_url, notice: "User successfully created!"
     else
       render :new, status: :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update(user_params)
-      redirect_to user_path(@user), notice: 'You have successfully updated your profile.'
+      redirect_to user_path(@user), notice: "You have successfully updated your profile."
     else
       render :edit, status: :unprocessable_entity
     end

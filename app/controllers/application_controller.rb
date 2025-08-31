@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def reject_user
-    redirect_to root_url, alert: 'You cannot edit someone else`s profile!'
+    redirect_to root_url, alert: "You cannot edit someone else`s profile!"
   end
 
 end
