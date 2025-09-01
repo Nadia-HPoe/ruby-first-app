@@ -35,10 +35,10 @@ class UsersController < ApplicationController
   end
   
 
-  def show
-    @questions = @user.questions.order(created_at: :desc)
-    @new_question = @user.questions.build
-  end
+def show
+  @questions = @user.questions.order(created_at: :desc)
+  @new_question = @user.questions.build
+end
 
   private
   def authorize_user

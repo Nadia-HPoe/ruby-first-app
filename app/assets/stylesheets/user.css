@@ -102,6 +102,8 @@ object-fit: cover;
 }
 .form {
   display: flex;
+  flex-direction: column;
+  padding-right: 30px;
 }
 .form-field {
   display: flex;
