@@ -5,7 +5,7 @@
 }
 .question {
   background-color: white;
-  padding: 15px 15px 25px;
+  padding: 25px 15px;
   border-radius: 20px;
   font-family: "Nunito";
   font-style: normal;
@@ -14,16 +14,27 @@
 .question-text {
   font-weight: 700;
   font-size: 26px;
-  color: #4e3f6f;
+  color: #615dfa;
 }
 .question-answer {
-  font-weight: 600;
+  padding-top: 20px;
+  font-weight: 700;
   font-size: 24px;
-  color: #8c8cb6;
+  color: #4e3f6f;
 }
 .question-date {
   padding-top: 20px;
   font-weight: 700;
   font-size: 16px;
-  color: #615dfa;
+  color: #8c8cb6;
+}
+.question-bottom{
+display: flex;
+align-items: end;
+justify-content: space-between;
+}
+
+.question-actions{
+display: flex;
+gap: 10px;
 }
