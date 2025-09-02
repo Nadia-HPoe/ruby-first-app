@@ -5,6 +5,9 @@ class QuestionsController < ApplicationController
   def edit
   end
 
+  def show
+  end
+
   def create
     @question = Question.new(question_params)
       if @question.save
@@ -14,11 +17,12 @@ class QuestionsController < ApplicationController
       end
   end
 
+
   def update
       if @question.update(question_params)
         redirect_to user_path(@question.user), notice: "Question was successfully updated."
       else
-        render :edit, status: :unprocessable_entity
+        render :edit
       end
   end
 
@@ -38,6 +42,10 @@ class QuestionsController < ApplicationController
     end
 
     def question_params
-      params.require(:question).permit(:user_id, :text, :answer)
-    end
+      if current_user.present? && params[:question][:user_id].to_i == current_user.id
+        params.require(:question).permit(:user_id, :text, :answer)
+      else
+        params.require(:question).permit(:user_id, :text)
+      end
+    end 
 end

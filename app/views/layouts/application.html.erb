@@ -8,7 +8,6 @@
     <meta name="mobile-web-app-capable" content="yes">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= yield :head %>
 
     <%# Enable PWA manifest for installable apps (make sure to enable in config/routes.rb too!) %>
@@ -34,7 +33,12 @@
         
           <div class="nav-item"><%= image_tag "header-home.svg"%><%= link_to "Main Page", root_path, class: "nav-link"%></div>
           <div class="nav-item"><%= image_tag "header-message.svg"%><%= link_to "My Questions", root_path, class: "nav-link" %></div>
-          <div class="nav-item"><%= image_tag "header-settings.svg"%><%= link_to "Settings", root_path, class: "nav-link" %></div>
+          <% if current_user == @user  %>
+            <div class="nav-item">
+              <%= image_tag "header-settings.svg"%>
+              <%= link_to "Settings", edit_user_path(@user), class: "nav-link"  %>
+            </div>
+          <% end %>
         </ul>
       </nav>
     </aside>
